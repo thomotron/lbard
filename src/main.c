@@ -695,13 +695,13 @@ int main(int argc, char **argv)
         else if (! strncasecmp("outernetrx=", argv[n], 11)) 
         {
           char *outernet_socketname = strdup(&argv[n][11]);
-	  if (outernet_rx_setup(outernet_socketname)) {
-	    exitVal=-3;
-	    break;
-	  }
-	  LOG_NOTE("Outernet socket name is '%s'",outernet_socketname);
-	}
-	else if (! strncasecmp("bundlelog=", argv[n], 10)) 
+          if (outernet_rx_setup(outernet_socketname)) {
+            exitVal=-3;
+            break;
+          }
+          LOG_NOTE("Outernet socket name is '%s'",outernet_socketname);
+        }
+        else if (! strncasecmp("bundlelog=", argv[n], 10))
         {
           bundlelog_filename = strdup(&argv[n][10]);
           LOG_NOTE("bundlelog_filename: %s", bundlelog_filename);
